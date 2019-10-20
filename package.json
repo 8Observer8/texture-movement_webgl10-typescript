@@ -1,0 +1,34 @@
+{
+    "name": "texture-movement_webgl10-typescript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "===>>> Clear <<<===": "",
+        "clear-client": "IF EXIST public\\js (rmdir /s/q public\\js)",
+        "clear-specs": "IF EXIST public\\specs\\js (rmdir /s/q public\\specs\\js)",
+        "clear-all": "npm run clear-client && npm run clear-specs",
+        "===>>> Debug Version of Client <<<===": "",
+        "build-debug-client": "tsc -p tsconfigs/client/tsconfig.debug.client.json",
+        "===>>> Debug Version of Specs <<<===": "",
+        "build-debug-specs": "tsc -p tsconfigs/specs/client/tsconfig.debug.specs.client.json",
+        "===>>> Release Version of Client <<<===": "",
+        "compile-release-client": "tsc -p tsconfigs/client/tsconfig.release.client.json",
+        "bundle-release-client": "browserify public/js/Program.js -o public/js/bundle.js",
+        "minify-release-client": "uglifyjs public/js/bundle.js -o public/js/bundle.min.js",
+        "build-release-client": "npm run compile-release-client && npm run bundle-release-client && npm run minify-release-client",
+        "===>>> Release Version of Specs <<<===": "",
+        "compile-release-specs": "tsc -p tsconfigs/specs/client/tsconfig.release.specs.client.json",
+        "bundle-release-specs": "browserify public/specs/js/specs/client/Class1Tests.js public/specs/js/specs/client/Class2Tests.js -o public/specs/js/specs/client/bundle.js",
+        "minify-release-specs": "uglifyjs public/specs/js/specs/client/bundle.js -o public/specs/js/specs/client/bundle.min.js",
+        "build-release-specs": "npm run compile-release-specs && npm run bundle-release-specs && npm run minify-release-specs"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/gl-matrix": "^2.4.5",
+        "@types/jasmine": "^3.3.16",
+        "@types/requirejs": "^2.1.31"
+    }
+}
